@@ -23,6 +23,14 @@
 
   $result = mysqli_query($conn, $sql);
 
-  echo $result;
+  if ($result) {
+    // echo "{'message': 'Woonplaats gewijzigd'}";
+    $message = [['message' => 'Woonplaats gewijzigd']];
+    echo json_encode($message);
+  } else {
+    // echo "{'message': 'Error: Woonplaats ongewijzigd'}"; 
+    $message = [['message' => 'Error: Woonplaats ongewijzigd']];
+    echo json_encode($message);           
+  };
 
 ?>
